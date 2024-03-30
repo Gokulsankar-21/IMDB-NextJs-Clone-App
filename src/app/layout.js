@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Providers from "./Providers";
+import NavBar from "./components/NavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,8 @@ export default function RootLayout({ children }) {
         <Providers>
           {/* Header */}
           <Header />
+          {/* Navbar */}
+          <NavBar />
           {children}
         </Providers>
       </body>
@@ -49,6 +52,7 @@ export default function RootLayout({ children }) {
  * nama body/app  ah cover pannanum
  *
  */
+
 /**
  *
  * @layout_response
@@ -58,8 +62,9 @@ export default function RootLayout({ children }) {
  * @creating_a_page_in_nextjs - kathukiten
  *
  *
+ *
  * @sahand_workflow
  * design pannumbothu - mobile first development - then small and above size
- * 
+ *
  *
  */
