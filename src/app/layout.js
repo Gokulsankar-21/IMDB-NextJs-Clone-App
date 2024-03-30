@@ -49,3 +49,17 @@ export default function RootLayout({ children }) {
  * nama body/app  ah cover pannanum
  *
  */
+/**
+ *
+ * @layout_response
+ * ena reqvanthalum next js layout la irunthu than res ah anuputhu
+ * page,jsx la ila
+ *
+ * @creating_a_page_in_nextjs - kathukiten
+ *
+ *
+ * @sahand_workflow
+ * design pannumbothu - mobile first development - then small and above size
+ * 
+ *
+ */
