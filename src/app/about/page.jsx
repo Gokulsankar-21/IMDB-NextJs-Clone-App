@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function page() {
+  console.log("req to about page");
   return (
     <div className="max-w-6xl mx-auto p-3 space-y-3">
       <h1 className="hover:text-amber-500 text-lg cursor-pointer">About</h1>
@@ -35,12 +36,12 @@ export default function page() {
   );
 }
 /**
- * inga filesystem than routing 
- * so file system base espeacial ah folder name base panni routing nadakum - matha mudiyathu 
- * ithu auomated ah matitom - so manual ah ethuvum panna matom 
- * 
+ * inga filesystem than routing
+ * so file system base espeacial ah folder name base panni routing nadakum - matha mudiyathu
+ * ithu auomated ah matitom - so manual ah ethuvum panna matom
+ *
  * nama entha rules break panna koodathu - ethavathu filename and folder structure changes panna we will get an error in nextjs
- * 
+ *
  * inga next js la auth epdi irukanum nu na kathukunum - kathupen
  * next js user data va manage pandrathu pakkanum
  */
