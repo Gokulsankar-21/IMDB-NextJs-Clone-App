@@ -5,14 +5,20 @@ export default async function Home({ searchParams }) {
   console.log("req to home page");
   console.log(searchParams.genre);
   // props la namaku req la irukura params varuthu - ithu yaru  anupura
-  const genre = searchParams.genre || "fetchTrending";
+  let genre = searchParams.genre || "fetchTrending";
   const API_KEY = process.env.API_KEY;
+ 
+  genre = genre ==='fetchTrending' ? "/trending/all/week" : genre;
+  genre = genre ==='fetchTopRated' ? "/movie/top_rated" : genre;
+  genre = genre ==='fetchNowPlaying' ? "/movie/now_playing" : genre;
+  genre = genre ==='fetchUpcoming' ? "/movie/upcoming" : genre;
 
+  let page = searchParams.page || 1
   const res =await new Promise((resolve)=>{
     setTimeout(async()=>{
 
       const res = await fetch(`
-      https://api.themoviedb.org/3${genre == "fetchTopRated" ? '/movie/top_rated':"/trending/all/week"}?api_key=${API_KEY}&language=en-US&page=1`,
+      https://api.themoviedb.org/3${genre}?api_key=${API_KEY}&language=en-US&page=${page}`,
       {
         next:{
           revalidate:10

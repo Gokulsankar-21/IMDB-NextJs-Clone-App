@@ -11,9 +11,10 @@ export default function Header() {
         max-w-6xl mx-auto"
     >
       {/* left side */}
-      <div className="flex gap-4">
+      <div className="flex gap-8">
         <MenuItem title="Home" address="/" Icon={AiFillHome} />
         <MenuItem title="About" address="/about" Icon={BsFillInfoCircleFill} />
+        <MenuItem title="Movie List" address="/movie-list" Icon={BsFillInfoCircleFill} />
       </div>
       {/* right side */}
       <div className="flex gap-4 items-center">
@@ -45,4 +46,8 @@ export default function Header() {
  * 'use client' aha irukum pothum next js smart ah ithu client side nu understand pannikum
  *
  * ipa itha pathi na innum understand pannikiten
+ */
+/**
+ * next js nama response server la ready pandra varaikum loading anupidum - atha kamichitu irukum
+ * Promise and setinterval maari api kudukum bohu next js loading ah vechi manage pannuthu
  */
