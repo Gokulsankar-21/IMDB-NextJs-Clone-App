@@ -14,7 +14,7 @@ export default function Header() {
       <div className="flex gap-8">
         <MenuItem title="Home" address="/" Icon={AiFillHome} />
         <MenuItem title="About" address="/about" Icon={BsFillInfoCircleFill} />
-        <MenuItem title="Movie List" address="/movie-list" Icon={BsFillInfoCircleFill} />
+        <MenuItem title="Genre" address="/movie-genres" Icon={BsFillInfoCircleFill} />
       </div>
       {/* right side */}
       <div className="flex gap-4 items-center">

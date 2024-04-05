@@ -1,15 +1,23 @@
 import React from "react";
 import Card from "./Card";
+import PagesComp from "./PagesComp";
 
 export default function Result({ result }) {
   // console.log(result.length);
   // result.map(m=>console.log(m.original_title))
-  
+
   return (
-    <div className="sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 max-w-6xl mx-auto py-6 gap-4 transition-all duration-500">{
-      result && result.map((movie) =>{
-        return  <Card  key={movie.id} movie={movie}/>
-      })}</div>
+    <div>
+      <div className="sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 max-w-6xl mx-auto py-6 gap-4 transition-all duration-500">
+        {result && result.map((movie) => {
+          return <Card key={movie.id} movie={movie} />
+        })}
+
+      </div>
+      <div className="mt-2 max-w-lg mx-auto">
+        <PagesComp />
+      </div>
+    </div>
   );
 }
 /**
