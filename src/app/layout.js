@@ -75,3 +75,9 @@ export default function RootLayout({ children }) {
  *
  *
  */
+/**
+ * @error
+ * ethavathu error achina page.jsx pathila error.jsx ah send pannuthu
+ * ithu client side la than irukanum 
+ * 
+ */
