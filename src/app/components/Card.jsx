@@ -4,15 +4,24 @@ import React from 'react'
 import { FaThumbsUp }
  from 'react-icons/fa'
 export default function Card({movie}) {
+  console.log(movie);
+  const movieImage = (movie.backdrop_path === null && movie.poster_path === null) 
+  ? '/backup-movie-banner.jpg' : 
+  `https://image.tmdb.org/t/p/original${movie.backdrop_path || movie.poster_path}`
+
   return (
     <div className='group p-3 cursor-pointer sm:border sm:border-slate-400
     rounded-t-lg  sm:hover:shadow-md  sm:hover:shadow-slate-400 transition duration-300'>
-        <Link href={`/movie/${movie.id}`}>
-            <Image src={`https://image.tmdb.org/t/p/original${movie.backdrop_path || movie.poster_path }`}  
+        <Link href={`/movie/${movie.id}`}
+        className='overflow-hidden h-80'>
+            <Image src={movieImage}  
             width={500}
             height={300}
             priority={true}
             quality={60}
+            style={{
+
+            }}
             className='group-hover:opacity-70 sm:rounded-t-lg transition-opacity duration-300'
             />
       
