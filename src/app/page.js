@@ -1,3 +1,4 @@
+import { resolve } from "styled-jsx/css";
 import Result from "./components/Result";
 
 export default async function Home({ searchParams }) {
@@ -7,8 +8,19 @@ export default async function Home({ searchParams }) {
   const genre = searchParams.genre || "fetchTrending";
   const API_KEY = process.env.API_KEY;
 
-  const res = await fetch(`
-  https://api.themoviedb.org/3${genre == "fetchTopRated" ? '/movie/top_rated':"/trending/all/week"}?api_key=${API_KEY}&language=en-US&page=1`);
+  const res =await new Promise((resolve)=>{
+    setTimeout(async()=>{
+
+      const res = await fetch(`
+      https://api.themoviedb.org/3${genre == "fetchTopRated" ? '/movie/top_rated':"/trending/all/week"}?api_key=${API_KEY}&language=en-US&page=1`,
+      {
+        next:{
+          revalidate:10
+        } //NextFetchRequestConfig
+      });
+      resolve(res)
+    },3000)
+  })
   
   const data = await res.json();
 
@@ -16,7 +28,6 @@ export default async function Home({ searchParams }) {
      throw new Error("failed to fatch");
   }
   const result = await data.results;
-  
   return (
     <div>
       <Result result={result} />
