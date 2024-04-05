@@ -12,7 +12,7 @@ export const metadata = {
   title: "IMDB Clone",
   description: "This is a Movie Database Clone ",
 };
-
+let check = true
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -23,6 +23,13 @@ export default function RootLayout({ children }) {
           <Header />
           {/* Navbar */}
           <NavBar />
+          {/* <div>
+            {
+              check ? true :"check"
+
+            }
+            {check=false}
+          </div> */}
           {children}
         </Providers>
       </body>

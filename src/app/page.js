@@ -2,16 +2,21 @@ import Result from "./components/Result";
 
 export default async function Home({ searchParams }) {
   console.log("req to home page");
+  console.log(searchParams.genre);
   // props la namaku req la irukura params varuthu - ithu yaru  anupura
-  const param = searchParams.get("genre") || "fetchTrending";
+  const genre = searchParams.genre || "fetchTrending";
   const API_KEY = process.env.API_KEY;
 
-  const response = await fetch(`
-  https://api.themoviedb.org/3/genre?q=${param}&api_key=${API_KEY}
+  const res = await fetch(`
+  https://api.themoviedb.org/3${genre == "fetchTopRated" ? '/movie/top_rated':"/trending/all/week"}?api_key=${API_KEY}&language=en-US&page=1`);
+  
+  const data = await res.json();
 
-  `);
-  const result = await response.json();
-  console.log(result);
+  if(!res.ok){
+     throw new Error("failed to fatch");
+  }
+  const result = await data.results;
+  
   return (
     <div>
       <Result result={result} />
