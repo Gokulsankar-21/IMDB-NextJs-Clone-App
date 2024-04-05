@@ -55,6 +55,16 @@ export default function loading() {
  * antha 10sec la entha req nadanthalum cache-res pogum ->many advantage - minor disadv
  * 
  * 
+ * loading nextjs server la handle pannikuthu - client la ila
+ * first fetch pannitu irukum bothu page ku pathila loading anuputhu
+ * fetch anathuku aprm page.jsx ah anuputhu
+ * simple technique
  * 
+ * Nextjs oda complete workflow teriyanum
+ * ipa standard ah agitu irukum
  * 
+ * @notes
+ *  nextjs la mutiple user ku authenticate pannalum antha movie data va than ellathukum distribute pannuvom  - ithu public ella user kum ore maari pogum = public api req
+ * athanala itha cahe la vechikalam
+ * ithae user data va db la fetch pannum bothu avanga data va cache ena pannaum nu pakkanum - private api req
  */
