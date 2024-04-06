@@ -3,8 +3,8 @@ import Result from "./components/Result";
 import PagesComp from "./components/PagesComp";
 
 export default async function Home({ searchParams }) { // ? ithula varathu ellam query ana inga nama parama ah edukurom
-  console.log("req to home page");
-  console.log(searchParams.genre);
+  // console.log("req to home page");
+  // console.log(searchParams.genre);
   // props la namaku req la irukura params varuthu - ithu yaru  anupura
   let genre = searchParams.genre || "fetchTrending";
   const API_KEY = process.env.API_KEY;

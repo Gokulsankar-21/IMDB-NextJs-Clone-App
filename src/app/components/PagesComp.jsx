@@ -7,10 +7,10 @@ export default function PagesComp() {
   const searchParams = useSearchParams();
   const params = new URLSearchParams(searchParams.toString()); // ithu client side string ah irukum | server side la req la object la irukum
   let genre = params.get("genre");
-  console.log(genre);
+  // console.log(genre);
   genre = genre ? "&genre=" + genre : "";
   let pathname = usePathname();
-  console.log(pathname,genre);
+  // console.log(pathname,genre);
 
   return (
     <div className="text-center pb-10 ">

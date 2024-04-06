@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function page() {
-  console.log("req to about page");
+  // console.log("req to about page");
   return (
     <div className="max-w-6xl mx-auto p-3 space-y-3">
       <h1 className="hover:text-amber-500 text-lg cursor-pointer">About</h1>
