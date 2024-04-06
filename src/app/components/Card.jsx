@@ -23,8 +23,12 @@ export default function Card({ movie }) {
           height={300}
           priority={true}
           quality={60}
-          style={{}}
-          className="group-hover:opacity-70 sm:rounded-t-lg transition-opacity duration-300"
+          style={{
+            height: "fit-content",
+          }}
+          className="group-hover:opacity-70
+           mx-auto
+          sm:rounded-t-lg transition-opacity duration-300"
         />
 
         <div className="py-2 px-1">
@@ -45,4 +49,9 @@ export default function Card({ movie }) {
 /**
  *
  * ipa /movie/moviei_id nu ref set panniten athuku nama innum ethuvm ready pannala athula layout ila athanala thu refresh aguthu
+ */
+/**
+ * images la nama precise ah irukanum
+ * antha technique ah kathukanum
+ *
  */
