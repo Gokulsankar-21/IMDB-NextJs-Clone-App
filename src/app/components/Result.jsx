@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Card from "./Card";
 import PagesComp from "./PagesComp";
 
@@ -15,7 +15,9 @@ export default function Result({ result }) {
           })}
       </div>
       <div className="mt-2 max-w-lg mx-auto">
-        <PagesComp />
+        <Suspense>
+          <PagesComp />
+        </Suspense>
       </div>
     </div>
   );

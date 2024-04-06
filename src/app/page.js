@@ -1,44 +1,37 @@
-import { resolve } from "styled-jsx/css";
 import Result from "./components/Result";
-import PagesComp from "./components/PagesComp";
 
-export default async function Home({ searchParams }) { // ? ithula varathu ellam query ana inga nama parama ah edukurom
+export default async function Home({ searchParams }) {
+  // ? ithula varathu ellam query ana inga nama parama ah edukurom
   // console.log("req to home page");
   // console.log(searchParams.genre);
   // props la namaku req la irukura params varuthu - ithu yaru  anupura
   let genre = searchParams.genre || "fetchTrending";
   const API_KEY = process.env.API_KEY;
- 
-  genre = genre ==='fetchTrending' ? "/trending/all/week" : genre;
-  genre = genre ==='fetchTopRated' ? "/movie/top_rated" : genre;
-  genre = genre ==='fetchNowPlaying' ? "/movie/now_playing" : genre;
-  genre = genre ==='fetchUpcoming' ? "/movie/upcoming" : genre;
 
-  let page = searchParams.page || 1
-  const res =await new Promise((resolve)=>{
-    setTimeout(async()=>{
+  genre = genre === "fetchTrending" ? "/trending/all/week" : genre;
+  genre = genre === "fetchTopRated" ? "/movie/top_rated" : genre;
+  genre = genre === "fetchNowPlaying" ? "/movie/now_playing" : genre;
+  genre = genre === "fetchUpcoming" ? "/movie/upcoming" : genre;
 
-      const res = await fetch(`
+  let page = searchParams.page || 1;
+  const res =  await fetch(
+        `
       https://api.themoviedb.org/3${genre}?api_key=${API_KEY}&language=en-US&page=${page}`,
-      {
-        next:{
-          revalidate:10
-        } //NextFetchRequestConfig
-      });
-      resolve(res)
-    },3000)
-  })
-  
+        {
+          next: {
+            revalidate: 10000,
+          }, //NextFetchRequestConfig
+        }
+      );
   const data = await res.json();
 
-  if(!res.ok){
-     throw new Error("failed to fatch");
+  if (!res.ok) {
+    throw new Error("failed to fatch");
   }
   const result = await data.results;
   return (
     <div>
       <Result result={result} />
-      
     </div>
   );
 }

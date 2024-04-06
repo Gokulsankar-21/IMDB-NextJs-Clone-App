@@ -4,7 +4,13 @@ import React from "react";
 export default function loading() {
   return (
     <div className="flex justify-center mt-14">
-      <Image src="spinner.svg" alt="spinner" className="h-52" />
+      <Image
+        src="spinner.svg"
+        alt="spinner"
+        width={300}
+        height={300}
+        className="h-52"
+      />
     </div>
   );
 }
