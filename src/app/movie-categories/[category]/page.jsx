@@ -3,7 +3,7 @@ import React from 'react'
 
 export default async function page({params,searchParams}) {
   const category = params.category;
-  console.log(category);
+  // console.log(category);
   const genreId = getGenreId(category)
   // console.log(genreId);
   function getGenreId(cat){
