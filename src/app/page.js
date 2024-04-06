@@ -14,19 +14,18 @@ export default async function Home({ searchParams }) {
   genre = genre === "fetchUpcoming" ? "/movie/upcoming" : genre;
 
   let page = searchParams.page || 1;
+  let result;
   try {
     const res = await fetch(
-      `
-  https://api.themoviedb.org/3${genre}?api_key=${API_KEY}&language=en-US&page=${page}`
+      `https://api.themoviedb.org/3${genre}?api_key=${API_KEY}&language=en-US&page=${page}`
     );
     const data = await res.json();
 
-    if (!res.ok) {
-      throw new Error("failed to fatch");
+    if (res.ok) {
+      result = await data.results;
     }
-    const result = await data.results;
   } catch (error) {
-    throw new Error(error.message);
+    throw new Error(error.messag || "failed to fetch");
   }
   return (
     <div>
