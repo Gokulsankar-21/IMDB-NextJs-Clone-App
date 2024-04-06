@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
-import Providers from "./Providers";
+import Providers from "./components/Providers";
 import NavBar from "./components/NavBar";
 import SearchBox from "./components/SearchBox";
 import Footer from "./components/Footer";
