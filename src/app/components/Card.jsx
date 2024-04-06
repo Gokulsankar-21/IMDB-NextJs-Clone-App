@@ -22,7 +22,7 @@ export default function Card({ movie }) {
           alt="movie-image"
           width={500}
           height={300}
-          priority={true}
+        
         
           style={{
             height: "fit-content",

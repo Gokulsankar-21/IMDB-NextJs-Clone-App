@@ -17,7 +17,7 @@ export default async function MoviePage({ params }) {
           }`}
           width={500}
           height={300}
-          priority={true}
+      
       
           alt="movie-image"
           style={{

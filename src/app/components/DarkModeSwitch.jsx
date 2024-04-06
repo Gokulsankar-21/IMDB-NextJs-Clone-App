@@ -19,7 +19,7 @@ export default function DarkModeSwitch() {
   // and ThemeProvider useContext() use pannuthu - athula local storage la theme ah set panuthanu pakkanum
   // oithu local storage la engayum stoare agala once we refresh the page athu system theme maridum
   const [mounting, setMounting] = useState(false);
-  useEffect(() => setMounting(true)); // useeffect - dom load anathuku aprm and state change agum bothu recycle nadakum
+  useEffect(() => setMounting(true),[]); // useeffect - dom load anathuku aprm and state change agum bothu recycle nadakum
   return (
     <div>
       {/* DOM load anathuku aprm ithu config start agum */}
