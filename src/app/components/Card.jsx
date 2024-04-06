@@ -19,6 +19,7 @@ export default function Card({ movie }) {
       <Link href={`/movie/${movie.id}`} className="overflow-hidden h-80">
         <Image
           src={movieImage}
+          alt="movie-image"
           width={500}
           height={300}
           priority={true}

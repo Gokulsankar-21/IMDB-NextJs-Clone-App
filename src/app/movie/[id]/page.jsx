@@ -19,6 +19,7 @@ export default async function MoviePage({ params }) {
           height={300}
           priority={true}
           quality={60}
+          alt="movie-image"
           style={{
             maxWidth: "100%",
             height: "100%",
