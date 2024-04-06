@@ -1,11 +1,11 @@
 import Result from '@/app/components/Result';
 import React from 'react'
 
-export default async function page({params}) {
+export default async function page({params,searchParams}) {
   const category = params.category;
   console.log(category);
   const genreId = getGenreId(category)
-  console.log(genreId);
+  // console.log(genreId);
   function getGenreId(cat){
    if(cat === "Action") return '28'
    if(cat === "Adventure") return '12'
@@ -28,8 +28,8 @@ export default async function page({params}) {
    if(cat === "War") return '10752'
    if(cat === "Western") return '37'
     }
-  
-    const res = await fetch(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genreId}&api_key=${process.env.API_KEY}`)
+    const page= searchParams.page || 1
+    const res = await fetch(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${genreId}&api_key=${process.env.API_KEY}`)
     
     if(!res.ok){
       throw new Error("Something went wrong, please try again ")
@@ -39,7 +39,8 @@ export default async function page({params}) {
 
   return (
     <div>
-      <h1 className='text-2xl font-semibold text-amber-500 mt-3 mb-1 text-center hover:underline cursor-pointer'>{category}</h1>
+      <h1 className='text-2xl font-semibold text-amber-500 mt-3 mb-1 text-center hover:underline cursor-pointer'>{category}
+      </h1>
       <Result result={results} />
     </div>
   )

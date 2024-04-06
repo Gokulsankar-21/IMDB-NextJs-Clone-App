@@ -1,7 +1,8 @@
 import React from 'react'
 import MovieList from '../components/MovieList';
 
-export default async function MovieListPage() {
+export default async function MovieListPage({searchParams}) {
+ 
     const res= await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.API_KEY}&language=en`)
     if(!res.ok){
         throw new Error('Something went wrong, please try again')

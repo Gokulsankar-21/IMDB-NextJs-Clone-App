@@ -1,5 +1,6 @@
 import { resolve } from "styled-jsx/css";
 import Result from "./components/Result";
+import PagesComp from "./components/PagesComp";
 
 export default async function Home({ searchParams }) { // ? ithula varathu ellam query ana inga nama parama ah edukurom
   console.log("req to home page");
@@ -37,6 +38,7 @@ export default async function Home({ searchParams }) { // ? ithula varathu ellam
   return (
     <div>
       <Result result={result} />
+      
     </div>
   );
 }
