@@ -4,7 +4,9 @@ export default function page() {
   // console.log("req to about page");
   return (
     <div className="max-w-6xl mx-auto p-3 space-y-3">
-      <h1 className="hover:text-amber-500 text-lg cursor-pointer">About</h1>
+      <h1 className="text-amber-500 text-xl hover:underline font-semibold text-center cursor-pointer">
+        About
+      </h1>
       <p>
         Welcome to our movie database website! We are a team of passionate movie
         enthusiasts who have come together to create a one-stop destination for

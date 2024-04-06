@@ -14,11 +14,11 @@ export const metadata = {
   title: "IMDB Clone",
   description: "This is a Movie Database Clone ",
 };
-let check = true
+let check = true;
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`min-h-screen ${inter.className}`}>
         {/* Theme  */}
         <Providers>
           {/* Header */}
@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
           </div> */}
           {/* Search Box */}
           <SearchBox />
-          {children}
+          <div className="min-h-screen">{children}</div>
           <Footer />
         </Providers>
       </body>
@@ -83,6 +83,6 @@ export default function RootLayout({ children }) {
 /**
  * @error
  * ethavathu error achina page.jsx pathila error.jsx ah send pannuthu
- * ithu client side la than irukanum 
- * 
+ * ithu client side la than irukanum
+ *
  */

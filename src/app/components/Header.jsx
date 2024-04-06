@@ -4,6 +4,7 @@ import { AiFillHome } from "react-icons/ai";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import Link from "next/link";
 import DarkModeSwitch from "./DarkModeSwitch";
+import { BiSolidMoviePlay } from "react-icons/bi";
 export default function Header() {
   return (
     <div
@@ -13,8 +14,8 @@ export default function Header() {
       {/* left side */}
       <div className="flex gap-8">
         <MenuItem title="Home" address="/" Icon={AiFillHome} />
+        <MenuItem title="Genre" address="/movie-genres" Icon={BiSolidMoviePlay} />
         <MenuItem title="About" address="/about" Icon={BsFillInfoCircleFill} />
-        <MenuItem title="Genre" address="/movie-genres" Icon={BsFillInfoCircleFill} />
       </div>
       {/* right side */}
       <div className="flex gap-4 items-center">
